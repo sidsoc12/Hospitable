@@ -1,4 +1,4 @@
-# CorrectedPhase1
+# Hospitable.live
  Detailed Web App with 7000 hits. Contains data on ICU beds in each hospital and data on each testing center in the United States. Contains a voice activated chat bot to answer commonly asked COVID-19 questions.
 
 <img width="1607" alt="Screen Shot 2022-04-14 at 4 06 22 PM" src="https://user-images.githubusercontent.com/64938719/163492023-3e8c6275-5e90-44db-9fde-8e80848ccbee.png">
