@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="index2.js"></script>
+  <title>Hospitable</title>
+  <link rel="stylesheet" href="https://use.typekit.net/mjk1wyj.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <style>
+    #sidebar{
+      height: 100%;
+      position: absolute;
+      width: 25%;
+      float: left;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(255, 255, 255, 0.8);
+      z-index: 0;
+      background-blend-mode: lighten;
+    }
+    #logo-row {
+      width: 55%;
+      margin: 0 auto;
+      margin-top: 5%;
+    }
+    #logo {
+      width: 100%;
+      text-align: center;
+      opacity: 100%;
+      z-index: 1;
+    }
+    #icons{
+      margin-top: 40px;
+    }
+    #icons{
+      margin-left: 0%;
+    }
+
+    #icons img{
+      float: left;
+      margin-left: 6.5%;
+      height: 45px;
+    }
+
+    #home {
+      height: 65px;
+    }
+
+    #firstHeading{
+      font-size: 20px;
+    }
+    #map{
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+    }
+
+    #search_area{
+      height: 10%;
+      float: left;
+      background: red;
+    }
+    #pac-input {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid #000000;
+      float: left;
+      font-size: 20px;
+      margin-top: 13px;
+      width: 240px;
+      font-family: myriad-pro, sans-serif;
+      font-style: normal;
+      font-weight: 300;
+      margin-left: 10%; 
+    }
+
+    #panel{
+      height: 60%;
+      margin-top: 7%;
+      margin-left: 10%;
+      margin-right: 10%;
+      font-family: myriad-pro, sans-serif;
+      font-style: normal;
+      font-weight: 300;
+    }
+    #panel h1 {
+      font-size: 24px;
+    }
+    #panel b{
+      font-weight: 700;
+    }
+    #panel a{
+      color: #000;
+    }
+
+    a[href^="http://maps.google.com/maps"]{display:none !important}
+    a[href^="https://maps.google.com/maps"]{display:none !important}
+
+    .gmnoprint a, .gmnoprint span, .gm-style-cc {
+        display:none;
+    }
+    .gmnoprint div {
+        background:none !important;
+    }
+    /* basic positioning */
+    .legend { list-style: none; margin-left:10px;}
+    .legend li { float: left; margin-right: 15px;}
+    .legend span { border: 1px solid #ccc; float: left; width: 8px; height: 10px; margin: 2px;}
+    .legend {
+             position: fixed;
+             top: 70%;
+             left: 10%; 
+  /* bring your own prefixes */
+             transform: translate(-50%, -50%);
+            }
+    /* your colors */
+    .legend .greendot { background-color: #00ff00;}
+    .legend .yellowdot { background-color: #ffff33; }
+    .legend .reddot { background-color: #ff3333; }
+    .legend .blackdot{ background-color: #000000; }
+  </style>
+</head>
+<body>
+  <div id="sidebar">
+    <div id="logo-row">
+      <img src="logo.png" id="logo">
+      <button onclick="location.href='index 2.html'" type="button" style="height:40px; width:80px;">
+        COVID-19 Section
+      </button>
+    </div>
+    
+    <div id="panel"></div>
+    <div id="search-area">
+      <br></br>
+        <input id="pac-input" type="text" placeholder="Search Location" style="z-index:10000;">
+    </div><br></br>
+    <div id="icons">
+      <img src="hospital.png" id="hospitals" onclick="damarkers();">
+      <img src="home.png" id="home">
+      <img src="plus.png" id="zoom-in">
+      <img src="minus.png" id="zoom-out">
+    </div>
+  </div>
+  <ul class="legend">
+    <li><span class="greendot"></span>High amounts of available beds</li><br></br>
+    <li><span class="yellowdot"></span>Medium amounts of available beds</li><br></br>
+    <li><span class="reddot"></span>Low amounts of available beds</li><br></br>
+    <li><span class="blackdot"></span>Data of available beds N/A</li><br></br>
+  </ul>
+  
+  <div id="map"></div>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDq1SzCI_1hg6g2sls7jaeMLSY2u5nJYbc&libraries=places&callback=initMap" async defer></script>
+  </body>
+</html>

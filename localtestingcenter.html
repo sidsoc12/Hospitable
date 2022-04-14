@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.but {
+  margin: auto;
+  width: 40%;
+  border: 2px solid #73AD21;
+  padding: 6px;
+}
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+.center {
+  margin: auto;
+  width: 60%;
+  border: 3px solid #73AD21;
+  padding: 10px;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+#firstpart{
+    font-size: 17px;
+}
+
+#toppart{
+    font-size: 17px;
+}
+#secondpart{
+    font-size: 17px;
+}
+#thirdpart{
+    font-size: 17px;
+}
+</style>
+
+<title>HTML img Tag1</title>
+<title>HTML img Tag2</title>
+<title>HTML img Tag3</title>
+<title>HTML img Tag4</title>
+
+</head>
+<body>
+
+  <div class="topnav">
+    <a href="index 2.html">Home</a>
+    <a href="localtestingcenter.html">Local Testing Centers</a>
+    <a href="faq1.html">FAQ</a>
+    <a href="register.html">Register For A Test</a>
+    <a href="index.html">Return to Hospitable</a>
+  </div>
+
+<div style="padding-left:16px">
+  <div class="w3-panel w3-grey">
+    <h2>Welcome to the COVID-19 Local Testing Center Page<br><br></h2>
+  </div>
+  
+  </div>
+   <div class="container">
+   <div class="table-responsive">
+    <div class="but">
+      <h2 align="center">Information about Test Centers with Facility Hours</h1>
+    </div>
+    <div><br></div>
+    <div align = 'center'>
+          <img src="clockIcon.jpeg" alt="Hours" width="150"
+         height="150">
+    </div>
+    <div> <br> </div>
+
+    
+    <div align="center">
+     <button type="button" name="load_data" id="load_data" class="btn btn-info">Load Data</button>
+     <button type="button"><button onclick="window.location.href='localtestingcenter.html';">
+      Redirecting to Local Testing Centers. 
+    </button>
+    </div>
+    <br />
+    <div id="table1">   
+    </div>
+   </div>
+  </div>
+  </div>
+
+  <div>
+  <div class="container">
+    <div class="table-responsive">
+      <div class="but">
+        <h2 align="center">Information about Test Centers with Phonenumber</h1>
+      </div>
+      <div><br></div>
+    <div align = 'center'> 
+      <img src="telephoneIcon.png" alt="Hours" width="150"
+         height="150">
+    </div>
+    <div> <br> </div>
+
+     
+     <div align="center">
+      <button type="button" name="load_data2" id="load_data2" class="btn btn-info">Load Data</button>
+      <button type="button"><button onclick="window.location.href='localtestingcenter.html';">
+        Redirecting to Local Testing Centers. 
+      </button>
+     </div>
+     <br />
+     <div id="table2"> 
+     </div>
+    </div>
+   </div>
+  </div>
+
+  <div>
+   <div class="container">
+    <div class="table-responsive">
+      <div class="but">
+        <h2 align="center">Information about Test Centers with Eligibility</h1> 
+      </div>
+      <div><br></div>
+    <div align = 'center'>
+      <img src="eligibilityIcon.png" alt="Hours" width="150"
+         height="150">
+    </div>
+    <div> <br> </div>
+
+     <div align="center">
+      <button type="button" name="load_data3" id="load_data3" class="btn btn-info">Load Data</button>
+      <button type="button"><button onclick="window.location.href='localtestingcenter.html';">
+        Redirecting to Local Testing Centers. 
+      </button>
+     </div>
+     <br />
+     <div id="table3"> 
+     </div>
+    </div>
+   </div>
+  </div>
+
+  <div>
+   <div class="container">
+    <div class="table-responsive">
+      <div class="but">
+        <h2 align="center">Information about Test Centers with Links</h1>
+      </div>
+      <div><br></div>
+    <div align = 'center'>
+      <img src="urlClipart.jpg" alt="Hours" width="175"
+         height="100">
+    </div>
+         <div><br></div>
+     <br />
+     <div align="center">
+      <button type="button" name="load_data4" id="load_data4" class="btn btn-info">Load Data</button>
+      <button type="button"><button onclick="window.location.href='localtestingcenter.html';">
+        Redirecting to Local Testing Centers. 
+      </button>
+     </div>
+     <br />
+     <div id="table4"> 
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>
+
+<script>
+$(document).ready(function(){
+ $('#load_data').click(function(){
+  $.ajax({
+   url:"Covid1_v5.csv",
+   dataType:"text",
+   success:function(data)
+   {
+    var employee_data = data.split(/\r?\n|\r/);
+    var table_data = '<table class="table table-bordered table-striped">';
+    for(var count = 0; count<employee_data.length; count++)
+    {
+     var cell_data = employee_data[count].split("|");
+     table_data += '<tr>';
+     for(var cell_count=0; cell_count<cell_data.length; cell_count++)
+     {
+      if(count === 0)
+      {
+       table_data += '<th>'+cell_data[cell_count]+'</th>';
+      }
+      else
+      {
+       table_data += '<td>'+cell_data[cell_count]+'</td>';
+      }
+     }
+     table_data += '</tr>';
+    }
+    table_data += '</table1>';       //fixed here from table to table 1 
+    $('#table1').html(table_data);   //fixed here from table to table 1 
+   }
+  });
+ });
+});
+
+//New one
+$(document).ready(function(){
+ $('#load_data2').click(function(){
+  $.ajax({
+   url:"Covid2_v5.csv",
+   dataType:"text",
+   success:function(data)
+   {
+    var employee_data = data.split(/\r?\n|\r/);
+    var table_data = '<table class="table table-bordered table-striped">';
+    for(var count = 0; count<employee_data.length; count++)
+    {
+     var cell_data = employee_data[count].split(" |");
+     table_data += '<tr>';
+     for(var cell_count=0; cell_count<cell_data.length; cell_count++)
+     {
+      if(count === 0)
+      {
+       table_data += '<th>'+cell_data[cell_count]+'</th>';
+      }
+      else
+      {
+       table_data += '<td>'+cell_data[cell_count]+'</td>';
+      }
+     }
+     table_data += '</tr>';
+    }
+    table_data += '</table2>';     //fixed here from table to table 2
+    $('#table2').html(table_data); //fixed here from table to table 2
+   }
+  });
+ });
+});
+ 
+
+ 
+// New one
+$(document).ready(function(){
+ $('#load_data3').click(function(){
+  $.ajax({
+   url:"Covid3_v5.csv",
+   dataType:"text",
+   success:function(data)
+   {
+    var employee_data = data.split(/\r?\n|\r/);
+    var table_data = '<table class="table table-bordered table-striped">';
+    for(var count = 0; count<employee_data.length; count++)
+    {
+     var cell_data = employee_data[count].split(" |");
+     table_data += '<tr>';
+     for(var cell_count=0; cell_count<cell_data.length; cell_count++)
+     {
+      if(count === 0)
+      {
+       table_data += '<th>'+cell_data[cell_count]+'</th>';
+      }
+      else
+      {
+       table_data += '<td>'+cell_data[cell_count]+'</td>';
+      }
+     }
+     table_data += '</tr>';
+    }
+    table_data += '</table3>';     //fixed here from table to table 3 
+    $('#table3').html(table_data); //fixed here from table to table 3
+   }
+  });
+});
+ 
+});
+ // New one
+ $(document).ready(function(){
+ $('#load_data4').click(function(){
+  $.ajax({
+   url:"Covid4_v5.csv",
+   dataType:"text",
+   success:function(data)
+   {
+    var employee_data = data.split(/\r?\n|\r/);
+    var table_data = '<table class="table table-bordered table-striped">';
+    for(var count = 0; count<employee_data.length; count++)
+    {
+     var cell_data = employee_data[count].split("|");
+     table_data += '<tr>';
+     for(var cell_count=0; cell_count<cell_data.length; cell_count++)
+     {
+      if(count === 0)
+      {
+       table_data += '<th>'+cell_data[cell_count]+'</th>';
+      }
+      else
+      {
+       table_data += '<td>'+cell_data[cell_count]+'</td>';
+      }
+     }
+     table_data += '</tr>';
+    }
+    table_data += '</table4>';     //fixed here from table to table 4 
+    $('#table4').html(table_data); //fixed here from table to table 4
+   }
+  });
+});
+ 
+});
+</script>
